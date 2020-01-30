@@ -27,4 +27,4 @@ for friend in data["items"]:
     friends.append(data2[0])
     print("Друг {} {} ID: {}".format(data2[0]["first_name"], data2[0]["last_name"], data2[0]["id"]))
 
-savefile("friends_2".friends)
+savefile("friends_2", friends)
