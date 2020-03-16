@@ -11,3 +11,13 @@
 - Версия mongodb 3.6.3
 
 Базы данных установлены на Raspberry Pi3B с ОС Ubuntu 18.04 x64 Server for RPi3. Весь доступ к машине по ssh
+
+<b>Важное про базы данных MySQL и русский текст!</b>
+
+Чтобы текст вставлялся в базу, во-первых, нужно использовать ```encode('utf-8')```, во вторых, база данных должна быть создана с поддержкой формата <i>utf8mb4</i> или преобразована к нему такими командами: 
+
+```sql
+
+ALTER DATABASE test_db CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+ALTER TABLE test_db.vacancy CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
